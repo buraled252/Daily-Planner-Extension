@@ -10,3 +10,6 @@ function getTasksFromLocalStorage(){
 function updateTasksInLocalStorage(){
     localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
+function createTask(taskText){
+    return {text: taskText, completed: false };
+}
