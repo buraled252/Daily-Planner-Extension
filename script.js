@@ -13,3 +13,8 @@ function updateTasksInLocalStorage(){
 function createTask(taskText){
     return {text: taskText, completed: false };
 }
+function deleteTask(index){
+    return taskArray.splice(index,1);
+    updateTasksInLocalStorage()
+}
+
