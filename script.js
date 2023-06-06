@@ -7,3 +7,6 @@ let taskArray = getTasksFromLocalStorage()
 function getTasksFromLocalStorage(){
     return JSON.parse(localStorage.getItem("tasks")) || [];
 }
+function updateTasksInLocalStorage(){
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
+}
