@@ -50,6 +50,7 @@ function createTaskElement(taskObj){
   
     return taskItem;
   }
+  //Rendering Tasks
 function renderTasks(){
     taskList.innerHTML = ""
     for (let i = 0; i < taskArray.length; i++) {
