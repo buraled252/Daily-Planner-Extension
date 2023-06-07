@@ -53,10 +53,20 @@ function createTaskElement(taskObj){
 function renderTasks(){
     taskList.innerHTML = ""
     for (let i = 0; i < taskArray.length; i++) {
-        createTaskElement(taskArray[i]);
-        const taskElement = taskArray;
+        const taskElement = createTaskElement(taskArray[i])
         taskList.appendChild(taskElement);
-        
     }
+    addTaskButton.addEventListener("click",function(){
+        const taskText = taskInput.value;
+        if (taskText === "") return;
+        const newTask = createTask(taskText);
+        taskArray.push(newTask);
+        updateTasksInLocalStorage();
+        taskInput.value = ""
+        renderTasks();
+    })
 }
+renderTasks()
+
+
 
